@@ -26,14 +26,13 @@
                         <div class="product-images">
                             <main id="gallery">
                                 <div class="main-img">
-                                    <img src="{{ asset('images/product-details/01.jpg')}}" id="current" alt="#">
+                                    <img src="{{ $product->getFirstMediaUrl('image','preview') }}" id="current" alt="#">
                                 </div>
                                 <div class="images">
-                                    <img src="{{ asset('images/product-details/01.jpg')}}" class="img" alt="#">
-                                    <img src="{{ asset('images/product-details/02.jpg')}}" class="img" alt="#">
-                                    <img src="{{ asset('images/product-details/03.jpg')}}" class="img" alt="#">
-                                    <img src="{{ asset('images/product-details/04.jpg')}}" class="img" alt="#">
-                                    <img src="{{ asset('images/product-details/05.jpg')}}" class="img" alt="#">
+                                    @foreach($product->image as $key => $media)
+                                    <img src="{{ $media->getUrl('thumb') }}" class="img" alt="#">
+                                    @endforeach
+
                                 </div>
                             </main>
                         </div>
