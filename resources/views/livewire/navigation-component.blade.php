@@ -71,7 +71,7 @@
                     <div class="col-lg-3 col-md-3 col-7">
                         <!-- Start Header Logo -->
                         <a class="navbar-brand" href="{{ route('welcome') }}">
-                            <img src="assets/images/logo/logo.svg" alt="Logo">
+                            <img src="{{ asset('images/logo/logo.png') }}" alt="Logo">
                         </a>
                         <!-- End Header Logo -->
                     </div>
