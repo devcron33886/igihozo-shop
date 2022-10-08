@@ -183,7 +183,7 @@
                             <h3 class="heading text-center">{{ $category->name }}</h3>
 
                             <div class="images">
-                                <img src="public/images/products/product-1.jpg" alt="#">
+                                <img src="{{ $category->getFirstMediaUrl('image','preview') }}" alt="#">
                             </div>
                         </div>
                     </div>

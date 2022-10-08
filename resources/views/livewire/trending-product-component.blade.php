@@ -1,7 +1,7 @@
 <div class="col-lg-3 col-md-6 col-12">
     <div class="single-product">
         <div class="product-image">
-            <img src="{{ asset('images/products/product-1.jpg') }}" alt="#">
+            <img src="{{ $product->getFirstMediaUrl('image','preview') }}" alt="#">
             @if ($added)
                 <div class="button">
                     <button type="button" wire:click="remove" wire:loading.attr="disabled" class="btn" style="background-color:red !important;">
