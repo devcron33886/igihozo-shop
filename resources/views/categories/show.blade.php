@@ -1,4 +1,4 @@
-@extends('layouts.cutomer')
+@extends('layouts.customer')
 @section('content')
     <div class="breadcrumbs">
         <div class="container">
@@ -18,8 +18,6 @@
             </div>
         </div>
     </div>
-
-
     <section class="product-grids section">
         <div class="container">
             <div class="row">
@@ -34,14 +32,9 @@
                                         <a href="{{ route('category-details',$category->slug) }}">{{ $category->name }} </a><span>({{ $category->products->count() }})</span>
                                     </li>
                                 @endforeach
-
-
-
                             </ul>
                         </div>
-
                     </div>
-
                 </div>
                 <div class="col-lg-9 col-12">
                     <div class="product-grids-head">
@@ -66,7 +59,7 @@
                         </div>
                         <div class="tab-content" id="nav-tabContent">
                             <div class="tab-pane fade show active" id="nav-grid" role="tabpanel"
-                                aria-labelledby="nav-grid-tab">
+                                 aria-labelledby="nav-grid-tab">
                                 <div class="row">
                                     @foreach($products as $product)
                                         <div class="col-lg-4 col-md-6 col-12">
@@ -74,10 +67,12 @@
                                             <div class="single-product">
                                                 <div class="product-image">
                                                     @if($product->image)
-                                                        <img src="{{ $product->getFirstMediaUrl('image','image') }}" alt="{{ $product->name }}">
+                                                        <img src="{{ $product->getFirstMediaUrl('image','image') }}"
+                                                             alt="{{ $product->name }}">
                                                     @endif
                                                     <div class="py-1 align-center">
-                                                        <a href="{{ route('product-details',$product->slug) }}" class="btn btn-primary"><i
+                                                        <a href="{{ route('product-details',$product->slug) }}"
+                                                           class="btn btn-primary"><i
                                                                 class="lni lni-cart"></i> Add to Cart</a>
                                                     </div>
                                                 </div>
@@ -95,7 +90,6 @@
 
                                         </div>
                                     @endforeach
-
                                 </div>
                             </div>
                         </div>

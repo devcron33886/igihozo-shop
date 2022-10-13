@@ -1,4 +1,4 @@
-@extends('layouts.cutomer')
+@extends('layouts.customer')
 @section('content')
     <div class="breadcrumbs">
         <div class="container">
@@ -30,7 +30,7 @@
                                 </div>
                                 <div class="images">
                                     @foreach($product->image as $key => $media)
-                                    <img src="{{ $media->getUrl('thumb') }}" class="img" alt="#">
+                                        <img src="{{ $media->getUrl('thumb') }}" class="img" alt="#">
                                     @endforeach
 
                                 </div>

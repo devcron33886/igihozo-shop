@@ -1,4 +1,4 @@
-@extends('layouts.cutomer')
+@extends('layouts.customer')
 @section('content')
     <div class="breadcrumbs">
         <div class="container">
@@ -60,14 +60,14 @@
                                     <h3>Mail at</h3>
                                     <ul>
                                         <li><a
-                                                href="/cdn-cgi/l/email-protection#f3808683839c8187b3809b9c8394819a9780dd909c9e"><span
-                                                    class="__cf_email__"
-                                                    data-cfemail="03707673736c717743706b6c7364716a67702d606c6e">[email&#160;protected]</span></a>
+                                                    href="/cdn-cgi/l/email-protection#f3808683839c8187b3809b9c8394819a9780dd909c9e"><span
+                                                        class="__cf_email__"
+                                                        data-cfemail="03707673736c717743706b6c7364716a67702d606c6e">[email&#160;protected]</span></a>
                                         </li>
                                         <li><a
-                                                href="/cdn-cgi/l/email-protection#1477756671716654677c7b6473667d70673a777b79"><span
-                                                    class="__cf_email__"
-                                                    data-cfemail="85e6e4f7e0e0f7c5f6edeaf5e2f7ece1f6abe6eae8">[email&#160;protected]</span></a>
+                                                    href="/cdn-cgi/l/email-protection#1477756671716654677c7b6473667d70673a777b79"><span
+                                                        class="__cf_email__"
+                                                        data-cfemail="85e6e4f7e0e0f7c5f6edeaf5e2f7ece1f6abe6eae8">[email&#160;protected]</span></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -82,25 +82,25 @@
                                             <div class="col-lg-6 col-md-6 col-12">
                                                 <div class="form-group">
                                                     <input name="name" type="text" placeholder="Your Name"
-                                                        required="required">
+                                                           required="required">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-12">
                                                 <div class="form-group">
                                                     <input name="subject" type="text" placeholder="Your Subject"
-                                                        required="required">
+                                                           required="required">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-12">
                                                 <div class="form-group">
                                                     <input name="email" type="email" placeholder="Your Email"
-                                                        required="required">
+                                                           required="required">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-12">
                                                 <div class="form-group">
                                                     <input name="phone" type="text" placeholder="Your Phone"
-                                                        required="required">
+                                                           required="required">
                                                 </div>
                                             </div>
                                             <div class="col-12">
@@ -123,5 +123,5 @@
             </div>
         </div>
     </section>
-    <x-footer-component />
+    <x-footer-component/>
 @endsection

@@ -1,4 +1,4 @@
-@extends('layouts.cutomer')
+@extends('layouts.customer')
 @section('content')
     <div class="breadcrumbs">
         <div class="container">
@@ -67,10 +67,10 @@
                         <div class="single-widget range">
                             <h3>Price Range</h3>
                             <input type="range" class="form-range" name="range" step="1" min="100"
-                                max="10000" value="10" onchange="rangePrimary.value=value">
+                                   max="10000" value="10" onchange="rangePrimary.value=value">
                             <div class="range-inner">
                                 <label>$</label>
-                                <input type="text" id="rangePrimary" placeholder="100" />
+                                <input type="text" id="rangePrimary" placeholder="100"/>
                             </div>
                         </div>
 
@@ -181,13 +181,13 @@
                                     <nav>
                                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                             <button class="nav-link active" id="nav-grid-tab" data-bs-toggle="tab"
-                                                data-bs-target="#nav-grid" type="button" role="tab"
-                                                aria-controls="nav-grid" aria-selected="true"><i
-                                                    class="lni lni-grid-alt"></i></button>
+                                                    data-bs-target="#nav-grid" type="button" role="tab"
+                                                    aria-controls="nav-grid" aria-selected="true"><i
+                                                        class="lni lni-grid-alt"></i></button>
                                             <button class="nav-link" id="nav-list-tab" data-bs-toggle="tab"
-                                                data-bs-target="#nav-list" type="button" role="tab"
-                                                aria-controls="nav-list" aria-selected="false"><i
-                                                    class="lni lni-list"></i></button>
+                                                    data-bs-target="#nav-list" type="button" role="tab"
+                                                    aria-controls="nav-list" aria-selected="false"><i
+                                                        class="lni lni-list"></i></button>
                                         </div>
                                     </nav>
                                 </div>
@@ -195,17 +195,19 @@
                         </div>
                         <div class="tab-content" id="nav-tabContent">
                             <div class="tab-pane fade show active" id="nav-grid" role="tabpanel"
-                                aria-labelledby="nav-grid-tab">
+                                 aria-labelledby="nav-grid-tab">
                                 <div class="row">
                                     @foreach ($products as $product)
                                         <div class="col-lg-4 col-md-6 col-12">
 
                                             <div class="single-product">
                                                 <div class="product-image">
-                                                    <img src="{{ $product->getFirstMediaUrl('image','preview') }}" alt="{{ $product->name }}">
+                                                    <img src="{{ $product->getFirstMediaUrl('image','preview') }}"
+                                                         alt="{{ $product->name }}">
                                                     <div class="button">
-                                                        <a href="{{ route('product-details',$product->slug) }}" class="btn"><i
-                                                                class="lni lni-eye"></i> View Details</a>
+                                                        <a href="{{ route('product-details',$product->slug) }}"
+                                                           class="btn"><i
+                                                                    class="lni lni-eye"></i> View Details</a>
                                                     </div>
                                                 </div>
                                                 <div class="product-info">
@@ -234,7 +236,8 @@
                                                 <li class="active"><a href="javascript:void(0)">2</a></li>
                                                 <li><a href="javascript:void(0)">3</a></li>
                                                 <li><a href="javascript:void(0)">4</a></li>
-                                                <li><a href="javascript:void(0)"><i class="lni lni-chevron-right"></i></a>
+                                                <li><a href="javascript:void(0)"><i
+                                                                class="lni lni-chevron-right"></i></a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -253,7 +256,7 @@
                                                         <img src="assets/images/products/product-1.jpg" alt="#">
                                                         <div class="button">
                                                             <a href="product-details.html" class="btn"><i
-                                                                    class="lni lni-cart"></i> Add to
+                                                                        class="lni lni-cart"></i> Add to
                                                                 Cart</a>
                                                         </div>
                                                     </div>
@@ -291,7 +294,7 @@
                                                         <span class="sale-tag">-25%</span>
                                                         <div class="button">
                                                             <a href="product-details.html" class="btn"><i
-                                                                    class="lni lni-cart"></i> Add to
+                                                                        class="lni lni-cart"></i> Add to
                                                                 Cart</a>
                                                         </div>
                                                     </div>
@@ -329,7 +332,7 @@
                                                         <img src="assets/images/products/product-3.jpg" alt="#">
                                                         <div class="button">
                                                             <a href="product-details.html" class="btn"><i
-                                                                    class="lni lni-cart"></i> Add to
+                                                                        class="lni lni-cart"></i> Add to
                                                                 Cart</a>
                                                         </div>
                                                     </div>
@@ -367,7 +370,7 @@
                                                         <span class="new-tag">New</span>
                                                         <div class="button">
                                                             <a href="product-details.html" class="btn"><i
-                                                                    class="lni lni-cart"></i> Add to
+                                                                        class="lni lni-cart"></i> Add to
                                                                 Cart</a>
                                                         </div>
                                                     </div>
@@ -405,7 +408,7 @@
                                                         <span class="sale-tag">-50%</span>
                                                         <div class="button">
                                                             <a href="product-details.html" class="btn"><i
-                                                                    class="lni lni-cart"></i> Add to
+                                                                        class="lni lni-cart"></i> Add to
                                                                 Cart</a>
                                                         </div>
                                                     </div>
@@ -444,7 +447,8 @@
                                                 <li class="active"><a href="javascript:void(0)">2</a></li>
                                                 <li><a href="javascript:void(0)">3</a></li>
                                                 <li><a href="javascript:void(0)">4</a></li>
-                                                <li><a href="javascript:void(0)"><i class="lni lni-chevron-right"></i></a>
+                                                <li><a href="javascript:void(0)"><i
+                                                                class="lni lni-chevron-right"></i></a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -458,5 +462,5 @@
             </div>
         </div>
     </section>
-    <x-footer-component />
+    <x-footer-component/>
 @endsection

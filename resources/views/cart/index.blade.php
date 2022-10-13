@@ -1,4 +1,4 @@
-@extends('layouts.cutomer')
+@extends('layouts.customer')
 @section('content')
     <div class="breadcrumbs">
         <div class="container">
