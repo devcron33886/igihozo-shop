@@ -7,12 +7,12 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class StoreOrderRequest extends FormRequest
 {
-    public function authorize()
+    public function authorize(): bool
     {
         return Gate::allows('order_create');
     }
 
-    public function rules()
+    public function rules(): array
     {
         return [
             'order_no' => [
@@ -33,6 +33,14 @@ class StoreOrderRequest extends FormRequest
             ],
             'notes' => [
                 'required',
+            ],
+            'payment_method_id' => [
+                'required',
+                'integer',
+            ],
+            'shipping_method_id' => [
+                'required',
+                'integer',
             ],
             'total' => [
                 'required',

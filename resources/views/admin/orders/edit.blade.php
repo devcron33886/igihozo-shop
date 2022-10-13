@@ -22,7 +22,7 @@
             </div>
             <div class="form-group">
                 <label class="required" for="client_name">{{ trans('cruds.order.fields.client_name') }}</label>
-                <input class="form-control {{ $errors->has('client_name') ? 'is-invalid' : '' }}" type="text" name="client_name" id="client_name" value="{{ old('client_name', $order->client_name) }}" required>
+                <input class="form-control {{ $errors->has('client_name') ? 'is-invalid' : '' }}" type="text" name="name" id="client_name" value="{{ old('name', $order->client_name) }}" required>
                 @if($errors->has('client_name'))
                     <div class="invalid-feedback">
                         {{ $errors->first('client_name') }}

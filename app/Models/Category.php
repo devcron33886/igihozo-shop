@@ -6,6 +6,7 @@ use Cviebrock\EloquentSluggable\Sluggable;
 use DateTimeInterface;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\Image\Exceptions\InvalidManipulation;
 use Spatie\MediaLibrary\HasMedia;
@@ -78,5 +79,10 @@ class Category extends Model implements HasMedia
                 'source' => 'name',
             ],
         ];
+    }
+
+    public function products() :HasMany
+    {
+        return $this->hasMany(Product::class);
     }
 }

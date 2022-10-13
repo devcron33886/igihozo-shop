@@ -1,21 +1,20 @@
 <div class="col-lg-3 col-md-6 col-12">
     <div class="single-product">
         <div class="product-image">
-            <img src="{{ $product->getFirstMediaUrl('image','preview') }}" alt="#">
+            <img src="{{ $product->getFirstMediaUrl('image', 'preview') }}" alt="#">
             @if ($added)
                 <div class="button">
-                    <button type="button" wire:click="remove" wire:loading.attr="disabled" class="btn" style="background-color:red !important;">
+                    <button type="button" wire:click="remove" wire:loading.attr="disabled" class="btn"
+                        style="background-color:red !important;">
                         <i class="lni lni-close"></i>
                         Remove
                     </button>
                 </div>
             @else
-                <div class="button">
-                    <button type="button" wire:loading.attr="disabled" wire:click="addToCart" class="btn">
-                        <i class="lni lni-cart"></i>&nbsp;
-                        Add to Cart</a>
-                    </button>
-                </div>
+                <button type="button" wire:loading.attr="disabled" wire:click="addToCart" class="btn btn-primary">
+                    <i class="lni lni-cart"></i>&nbsp;
+                    Add to Cart</a>
+                </button>
             @endif
 
 

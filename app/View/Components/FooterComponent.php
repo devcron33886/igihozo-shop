@@ -2,6 +2,10 @@
 
 namespace App\View\Components;
 
+use App\Models\Category;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
 class FooterComponent extends Component
@@ -19,10 +23,11 @@ class FooterComponent extends Component
     /**
      * Get the view / contents that represent the component.
      *
-     * @return \Illuminate\Contracts\View\View|\Closure|string
+     * @return Application|Factory|View
      */
-    public function render()
+    public function render(): View|Factory|Application
     {
-        return view('components.footer-component');
+        $categories=Category::all();
+        return view('components.footer-component',compact('categories'));
     }
 }
