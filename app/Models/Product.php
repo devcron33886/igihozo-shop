@@ -59,7 +59,7 @@ class Product extends Model implements HasMedia
     public function registerMediaConversions(Media $media = null): void
     {
         $this->addMediaConversion('thumb')->fit('crop', 300, 300);
-        $this->addMediaConversion('preview');
+        $this->addMediaConversion('preview')->fit('crop',400,400);
     }
 
     public function getImageAttribute(): MediaCollection

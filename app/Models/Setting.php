@@ -23,7 +23,7 @@ class Setting extends Model
     protected $fillable = [
         'email',
         'mobile',
-        'whatsapp_number',
+        'whathsapp',
         'location',
         'description',
         'created_at',
@@ -31,7 +31,7 @@ class Setting extends Model
         'deleted_at',
     ];
 
-    protected function serializeDate(DateTimeInterface $date)
+    protected function serializeDate(DateTimeInterface $date): string
     {
         return $date->format('Y-m-d H:i:s');
     }

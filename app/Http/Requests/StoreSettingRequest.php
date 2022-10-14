@@ -23,7 +23,7 @@ class StoreSettingRequest extends FormRequest
                 'required',
                 'unique:settings',
             ],
-            'whatsapp_number' => [
+            'whathsapp' => [
                 'string',
                 'nullable',
             ],

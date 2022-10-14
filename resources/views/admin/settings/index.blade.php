@@ -58,7 +58,7 @@
                                 {{ $setting->mobile ?? '' }}
                             </td>
                             <td>
-                                {{ $setting->whatsapp_number ?? '' }}
+                                {{ $setting->whathsapp ?? '' }}
                             </td>
                             <td>
                                 {{ $setting->location ?? '' }}
@@ -142,7 +142,7 @@
       $($.fn.dataTable.tables(true)).DataTable()
           .columns.adjust();
   });
-  
+
 })
 
 </script>

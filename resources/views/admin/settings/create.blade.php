@@ -31,10 +31,10 @@
             </div>
             <div class="form-group">
                 <label for="whatsapp_number">{{ trans('cruds.setting.fields.whatsapp_number') }}</label>
-                <input class="form-control {{ $errors->has('whatsapp_number') ? 'is-invalid' : '' }}" type="text" name="whatsapp_number" id="whatsapp_number" value="{{ old('whatsapp_number', '') }}">
-                @if($errors->has('whatsapp_number'))
+                <input class="form-control {{ $errors->has('whathsapp') ? 'is-invalid' : '' }}" type="text" name="whathsapp" id="whathsapp" value="{{ old('whathsapp', '') }}">
+                @if($errors->has('whathsapp'))
                     <div class="invalid-feedback">
-                        {{ $errors->first('whatsapp_number') }}
+                        {{ $errors->first('whathsapp') }}
                     </div>
                 @endif
                 <span class="help-block">{{ trans('cruds.setting.fields.whatsapp_number_helper') }}</span>

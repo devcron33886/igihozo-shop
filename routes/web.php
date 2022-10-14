@@ -10,7 +10,7 @@
 
     Route::get('/collection/{category:slug}', App\Http\Controllers\CategoryController::class)->name('category-details');
 
-    Route::get('/collection/{product:slug}', App\Http\Controllers\ProductController::class)->name('product-details');
+    Route::get('/collection/product/{product:slug}', App\Http\Controllers\ProductController::class)->name('product-details');
 
     Route::get('/shopping/basket', [App\Http\Controllers\CartController::class, 'index'])->name('cart.index');
 
