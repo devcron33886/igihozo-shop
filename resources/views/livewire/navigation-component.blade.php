@@ -14,9 +14,7 @@
                                     <li>
                                        <p class="text-white"><i class="lni lni-phone"></i> {{ $setting->mobile }}</p>
                                     </li>
-                                    <li>
-                                       <p class="text-white"><i class="lni lni-map"></i> {{ $setting->location }}</p>
-                                    </li>
+                                    
                                 @endforeach
 
                             </ul>
