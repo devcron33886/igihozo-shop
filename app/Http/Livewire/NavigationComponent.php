@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Category;
+use App\Models\Setting;
 use Cart;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -19,7 +20,8 @@ class NavigationComponent extends Component
     {
         $totalItems = Cart::getTotalQuantity();
         $categories = Category::all();
+        $settings=Setting::first()->get();
 
-        return view('livewire.navigation-component', compact('categories', 'totalItems'));
+        return view('livewire.navigation-component', compact('categories', 'totalItems','settings'));
     }
 }
