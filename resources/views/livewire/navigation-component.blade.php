@@ -7,15 +7,15 @@
                     <div class="col-lg-4 col-md-4 col-12">
                         <div class="top-left">
                             <ul class="menu-top-link">
-                            @foreach ($settings as $setting)
+                                @foreach ($settings as $setting)
+                                    <li>
+                                        {{ $setting->email }}
+                                    </li>
+                                    <li>
+                                        {{ $setting->mobile }}
+                                    </li>
+                                @endforeach
 
-                            @endforeach
-                                <li>
-                                    {{ $setting->email }}
-                                </li>
-                                <li>
-                                    {{ $setting->mobile }}
-                                </li>
                             </ul>
                         </div>
                     </div>
