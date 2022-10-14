@@ -9,10 +9,13 @@
                             <ul class="menu-top-link">
                                 @foreach ($settings as $setting)
                                     <li>
-                                       <p class="text-white"> {{ $setting->email }}</p>
+                                       <p class="text-white"><i class="lni lni-envelope"></i> {{ $setting->email }}</p>
                                     </li>
                                     <li>
-                                       <p class="text-white"> {{ $setting->mobile }}</p>
+                                       <p class="text-white"><i class="lni lni-phone"></i> {{ $setting->mobile }}</p>
+                                    </li>
+                                    <li>
+                                       <p class="text-white"><i class="lni lni-map"></i> {{ $setting->location }}</p>
                                     </li>
                                 @endforeach
 
