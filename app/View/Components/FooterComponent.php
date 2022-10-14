@@ -3,6 +3,7 @@
 namespace App\View\Components;
 
 use App\Models\Category;
+use App\Models\Setting;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -28,6 +29,7 @@ class FooterComponent extends Component
     public function render(): View|Factory|Application
     {
         $categories=Category::all();
-        return view('components.footer-component',compact('categories'));
+        $settings=Setting::first()->get();
+        return view('components.footer-component',compact('categories','settings'));
     }
 }

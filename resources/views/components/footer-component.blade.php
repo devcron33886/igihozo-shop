@@ -41,14 +41,15 @@
                         <!-- Single Widget -->
                         <div class="single-footer f-contact">
                             <h3>Get In Touch With Us</h3>
-                            <p class="phone">Phone: +1 (900) 33 169 7720</p>
-                            <ul>
-                                <li><span class="fa fas-envelope">Monday-Friday: </span> 9.00 am - 8.00 pm</li>
-                                <li><span>Saturday: </span> 10.00 am - 6.00 pm</li>
-                            </ul>
-                            <p class="mail">
-                                <a href="mailto:support@shopgrids.com">support@shopgrids.com</a>
-                            </p>
+                            @foreach($settings as $setting)
+                                <p class="phone">Phone: {{ $setting->mobile }}</p>
+                                <p class="phone">WhatsApp: {{ $setting->whathsapp }}</p>
+                                <p class="phone">Address: {{ $setting->location }}</p>
+                                <p class="mail">
+                                    <a href="mailto:sales@igihozocouture.com">{{ $setting->email }}</a>
+                                </p>
+                            @endforeach
+
                         </div>
                         <!-- End Single Widget -->
                     </div>
@@ -58,11 +59,10 @@
                         <div class="single-footer f-link">
                             <h3>Information</h3>
                             <ul>
-                                <li><a href="javascript:void(0)">About Us</a></li>
-                                <li><a href="javascript:void(0)">Contact Us</a></li>
-                                <li><a href="javascript:void(0)">Downloads</a></li>
-                                <li><a href="javascript:void(0)">Sitemap</a></li>
-                                <li><a href="javascript:void(0)">FAQs Page</a></li>
+                                <li><a href="{{ route('about') }}">About Us</a></li>
+                                <li><a href="{{ route('contact') }}">Contact Us</a></li>
+                                <li><a href="{{ route('shop') }}">All Collections</a></li>
+                                <li><a href="{{ route('welcome') }}">FAQs Page</a></li>
                             </ul>
                         </div>
                         <!-- End Single Widget -->
@@ -73,7 +73,7 @@
                             <h3>Shop Departments</h3>
                             <ul>
                                 @foreach($categories as $category)
-                                    <li><a href="javascript:void(0)">{{ $category->name }}</a></li>
+                                    <li><a href="{{ route('category-details',$category->slug) }}">{{ $category->name }}</a></li>
                                 @endforeach
                             </ul>
                         </div>
@@ -89,27 +89,22 @@
         <div class="container">
             <div class="inner-content">
                 <div class="row align-items-center">
-                    <div class="col-lg-4 col-12">
-                        <div class="payment-gateway">
-                            <span>We Accept:</span>
-                            <img src="assets/images/footer/credit-cards-footer.png" alt="#">
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-12">
+
+                    <div class="col-lg-6 col-12">
                         <div class="copyright">
                             <p>&copy; Reserved<a href="{{ route('welcome') }}" rel="nofollow"
                                     > {{ config('app.name') }}</a></p>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-12">
+                    <div class="col-lg-6 col-12">
                         <ul class="socila">
                             <li>
                                 <span>Follow Us On:</span>
                             </li>
-                            <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
-                            <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
-                            <li><a href="javascript:void(0)"><i class="lni lni-instagram"></i></a></li>
-                            <li><a href="javascript:void(0)"><i class="lni lni-google"></i></a></li>
+                            <li><a href="javascript:void(0)" target="_blank"><i class="lni lni-facebook-filled"></i></a></li>
+                            <li><a href="javascript:void(0)" target="_blank"><i class="lni lni-twitter-original"></i></a></li>
+                            <li><a href="javascript:void(0)" target="_blank"><i class="lni lni-instagram"></i></a></li>
+
                         </ul>
                     </div>
                 </div>
