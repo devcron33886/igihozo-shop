@@ -9,10 +9,10 @@
                             <ul class="menu-top-link">
                                 @foreach ($settings as $setting)
                                     <li>
-                                        {{ $setting->email }}
+                                       <p class="text-white"> {{ $setting->email }}</p>
                                     </li>
                                     <li>
-                                        {{ $setting->mobile }}
+                                       <p class="text-white"> {{ $setting->mobile }}</p>
                                     </li>
                                 @endforeach
 
