@@ -95,10 +95,12 @@
                     <div class="col-lg-4 col-md-2 col-5">
                         <div class="middle-right-area">
                             <div class="nav-hotline">
-                                <i class="lni lni-phone"></i>
-                                <h3>Hotline:
-                                    <span>(+100) 123 456 7890</span>
-                                </h3>
+                                @foreach ($settings as $setting)
+                                    <i class="lni lni-phone"></i>
+                                    <h3>Hotline:
+                                        <span>{{ $setting->mobile }}</span>
+                                    </h3>
+                                @endforeach
                             </div>
                             <div class="navbar-cart">
 
@@ -125,9 +127,10 @@
                         <div class="mega-category-menu">
                             <span class="cat-button"><i class="lni lni-menu"></i>All Categories</span>
                             <ul class="sub-category">
-                                @foreach($categories as $category)
+                                @foreach ($categories as $category)
                                     <li>
-                                        <a href="{{ route('category-details',$category->slug) }}">{{ $category->name }}</a>
+                                        <a
+                                            href="{{ route('category-details', $category->slug) }}">{{ $category->name }}</a>
                                     </li>
                                 @endforeach
                             </ul>
@@ -136,8 +139,8 @@
                         <!-- Start Navbar -->
                         <nav class="navbar navbar-expand-lg">
                             <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                    aria-expanded="false" aria-label="Toggle navigation">
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="toggler-icon"></span>
                                 <span class="toggler-icon"></span>
                                 <span class="toggler-icon"></span>
@@ -145,16 +148,12 @@
                             <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                                 <ul id="nav" class="navbar-nav ms-auto">
                                     <li class="nav-item">
-                                        <a href="{{ route('welcome') }}" class="active" aria-label="Toggle navigation">Home</a>
+                                        <a href="{{ route('welcome') }}" class="active"
+                                            aria-label="Toggle navigation">Home</a>
                                     </li>
+
                                     <li class="nav-item">
-                                        <a href="#" class="active" aria-label="Toggle navigation">Men</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="active" aria-label="Toggle navigation">Women</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{ route('shop') }}" aria-label="Toggle navigation">Shop</a>
+                                        <a href="{{ route('shop') }}" aria-label="Toggle navigation">Collections</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="{{ route('about') }}" aria-label="Toggle navigation">About Us</a>
