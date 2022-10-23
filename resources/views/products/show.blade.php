@@ -11,7 +11,9 @@
                 <div class="col-lg-6 col-md-6 col-12">
                     <ul class="breadcrumb-nav">
                         <li><a href="{{ route('welcome') }}"><i class="lni lni-home"></i> Home</a></li>
-                        <li><a href="{{--{{ route('') }}--}}">{{ $product->category->name }}</a></li>
+                        <li><a
+                                href="{{ route('category-details', $product->category->slug) }}">{{ $product->category->name }}</a>
+                        </li>
                         <li>{{ $product->name }}</li>
                     </ul>
                 </div>
@@ -26,10 +28,11 @@
                         <div class="product-images">
                             <main id="gallery">
                                 <div class="main-img">
-                                    <img src="{{ $product->getFirstMediaUrl('image','preview') }}" id="current" alt="#">
+                                    <img src="{{ $product->getFirstMediaUrl('image', 'preview') }}" id="current"
+                                        alt="#">
                                 </div>
                                 <div class="images">
-                                    @foreach($product->image as $key => $media)
+                                    @foreach ($product->image as $key => $media)
                                         <img src="{{ $media->getUrl('thumb') }}" class="img" alt="#">
                                     @endforeach
 
@@ -42,31 +45,43 @@
                             <h2 class="title">{{ $product->name }}</h2>
                             <p class="category"><i class="lni lni-tag"></i> {{ $product->category->name }}</p>
                             <h3 class="price">{{ $product->formattedPrice() }}</h3>
-                            <p class="info-text">{{ Str::limit($product->description,140) }}</p>
+                            <p class="info-text">{{ Str::limit($product->description, 140) }}</p>
                             <div class="row">
 
                                 <div class="col-lg-4 col-md-4 col-12">
                                     <div class="form-group quantity">
-                                        <label for="color">Quantity</label>
-                                        <select class="form-control">
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                        </select>
+                                        <form action="{{-- {{ route('cart.addToCart', ['id' => $product->id]) }} --}}"
+                                            class="form-inline">
+
+                                            @if ($added)
+                                                <button wire:loading.attr="disabled" type="button" wire:click="remove"
+                                                    class="btn  btn-danger">
+                                                    <i class="fa fa-times"></i>
+                                                    Remove
+                                                </button>
+                                            @else
+                                                <div class="input-group">
+                                                    <input min="0.5" size="10" value="1" type="text"
+                                                        wire:model="quantity" max="{{ $product->qty }}" name="qty"
+                                                        class="form-control flat" placeholder="Qty"
+                                                        id="qty{{ $product->id }}">
+                                                    <span class="input-group-btn">
+                                                        <button wire:loading.attr="disabled" type="button" wire:click="add"
+                                                            class="btn  btn-success flat"
+                                                            {{ $product->qty <= 0 ? 'disabled' : '' }}>
+                                                            <i class="fa fa-plus"></i>
+                                                            Add to cart
+                                                        </button>
+                                                    </span>
+                                                </div><!-- /input-group -->
+                                            @endif
+
+                                        </form>
+
                                     </div>
                                 </div>
                             </div>
-                            <div class="bottom-content">
-                                <div class="row align-items-end">
-                                    <div class="col-lg-4 col-md-4 col-12">
-                                        <div class="button cart-button">
-                                            <button class="btn" style="width: 100%;">Add to Cart</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -87,5 +102,5 @@
             </div>
         </div>
     </section>
-    <x-footer-component/>
+    <x-footer-component />
 @endsection

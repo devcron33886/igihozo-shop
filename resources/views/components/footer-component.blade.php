@@ -42,11 +42,11 @@
                         <div class="single-footer f-contact">
                             <h3>Get In Touch With Us</h3>
                             @foreach($settings as $setting)
-                                <p class="phone">Phone: {{ $setting->mobile }}</p>
-                                <p class="phone">WhatsApp: {{ $setting->whathsapp }}</p>
-                                <p class="phone">Address: {{ $setting->location }}</p>
+                                <p class="phone">Phone: {{ $setting->mobile ??'' }}</p>
+                                <p class="phone">WhatsApp: {{ $setting->whathsapp ??'' }}</p>
+                                <p class="phone">Address: {{ $setting->location ??'' }}</p>
                                 <p class="mail">
-                                    <a href="mailto:sales@igihozocouture.com">{{ $setting->email }}</a>
+                                    <a href="mailto:sales@igihozocouture.com">{{ $setting->email ??'' }}</a>
                                 </p>
                             @endforeach
 

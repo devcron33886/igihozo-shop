@@ -3,6 +3,17 @@
     <!-- Start Hero Area -->
     <section class="hero-area">
         <div class="container">
+            @if(Session::has('message'))
+                <div class="row">
+                    <div class="col-12">
+                        <div class="alert alert-success">
+                            <p>
+                                <i class="fa fa-check-circle"></i>
+                                {{ Session::get('message') }}</p>
+                        </div>
+                    </div>
+                </div>
+            @endif
             <div class="row">
                 <div class="col-lg-8 col-12 custom-padding-right">
                     <div class="slider-head">
@@ -10,18 +21,19 @@
                         <div class="tns-outer" id="tns1-ow">
                             <div class="tns-controls" aria-label="Carousel Navigation" tabindex="0">
                                 <button type="button" data-controls="prev" tabindex="-1" aria-controls="tns1"><i
-                                            class="lni lni-chevron-left"></i></button>
+                                        class="lni lni-chevron-left"></i></button>
                                 <button type="button" data-controls="next" tabindex="-1" aria-controls="tns1"><i
-                                            class="lni lni-chevron-right"></i></button>
+                                        class="lni lni-chevron-right"></i></button>
                             </div>
                             <div class="tns-liveregion tns-visually-hidden" aria-live="polite" aria-atomic="true">slide
                                 <span class="current">4</span> of 2
                             </div>
                             <div id="tns1-mw" class="tns-ovh">
                                 <div class="tns-inner" id="tns1-iw">
-                                    <div class="hero-slider  tns-slider tns-carousel tns-subpixel tns-calc tns-horizontal"
-                                         id="tns1"
-                                         style="transform: translate3d(-50%, 0px, 0px); transition-duration: 0s;">
+                                    <div
+                                        class="hero-slider  tns-slider tns-carousel tns-subpixel tns-calc tns-horizontal"
+                                        id="tns1"
+                                        style="transform: translate3d(-50%, 0px, 0px); transition-duration: 0s;">
                                         <div class="single-slider tns-item tns-slide-cloned"
                                              style="background-image: url(assets/images/hero/slider-bg1.jpg);"
                                              aria-hidden="true" tabindex="-1">
@@ -34,7 +46,7 @@
                                                     labore dolore magna aliqua.</p>
                                                 <h3><span>Now Only</span> $320.99</h3>
                                                 <div class="button">
-                                                    <a href="product-grids.html" class="btn">Shop Now</a>
+                                                    <a href="{{ route('shop') }}" class="btn">Shop Now</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -50,7 +62,7 @@
                                                     labore dolore magna aliqua.</p>
                                                 <h3><span>Combo Only:</span> $590.00</h3>
                                                 <div class="button">
-                                                    <a href="product-grids.html" class="btn">Shop Now</a>
+                                                    <a href="{{ route('shop') }}" class="btn">Shop Now</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -67,7 +79,7 @@
                                                     labore dolore magna aliqua.</p>
                                                 <h3><span>Now Only</span> $320.99</h3>
                                                 <div class="button">
-                                                    <a href="product-grids.html" class="btn">Shop Now</a>
+                                                    <a href="{{ route('shop') }}" class="btn">Shop Now</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -85,7 +97,7 @@
                                                     labore dolore magna aliqua.</p>
                                                 <h3><span>Combo Only:</span> $590.00</h3>
                                                 <div class="button">
-                                                    <a href="product-grids.html" class="btn">Shop Now</a>
+                                                    <a href="{{ route('shop') }}" class="btn">Shop Now</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -102,7 +114,7 @@
                                                     labore dolore magna aliqua.</p>
                                                 <h3><span>Now Only</span> $320.99</h3>
                                                 <div class="button">
-                                                    <a href="product-grids.html" class="btn">Shop Now</a>
+                                                    <a href="{{ route('shop') }}" class="btn">Shop Now</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -118,7 +130,7 @@
                                                     labore dolore magna aliqua.</p>
                                                 <h3><span>Combo Only:</span> $590.00</h3>
                                                 <div class="button">
-                                                    <a href="product-grids.html" class="btn">Shop Now</a>
+                                                    <a href="{{ route('shop') }}" class="btn">Shop Now</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -152,7 +164,7 @@
                                     <h2>Weekly Sale!</h2>
                                     <p>Saving up to 50% off all online store items this week.</p>
                                     <div class="button">
-                                        <a class="btn" href="product-grids.html">Shop Now</a>
+                                        <a class="btn" href="{{ route('shop') }}">Shop Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -203,7 +215,7 @@
                 </div>
             </div>
             <div class="row">
-                @foreach (\App\Models\Product::limit(8)->get() as $product)
+                @foreach (\App\Models\Product::limit(9)->get() as $product)
                     <livewire:trending-product-component :product="$product"/>
                 @endforeach
             </div>

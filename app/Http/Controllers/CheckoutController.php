@@ -17,13 +17,14 @@ class CheckoutController extends Controller
         $payments = PaymentMethod::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         $shippings = ShippingType::pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
-        return view('checkout.index',compact('cart','payments','shippings'));
+
+        return view('checkout.index', compact('cart', 'payments', 'shippings'));
     }
 
     public function checkout(StoreOrderRequest $request)
     {
         if (Cart::isEmpty()) {
-            return redirect()->back();
+            return redirect()->route('shop');
         }
         $order = Order::create($request->all());
 

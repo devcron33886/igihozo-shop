@@ -14,14 +14,15 @@ class NavigationComponent extends Component
 {
     protected $listeners = [
         'cart.updated' => '$refresh',
+        'productRemoved' => '$refresh',
     ];
 
     public function render(): Factory|View|Application
     {
         $totalItems = Cart::getTotalQuantity();
         $categories = Category::all();
-        $settings=Setting::first()->get();
+        $settings = Setting::first()->get();
 
-        return view('livewire.navigation-component', compact('categories', 'totalItems','settings'));
+        return view('livewire.navigation-component', compact('categories', 'totalItems', 'settings'));
     }
 }

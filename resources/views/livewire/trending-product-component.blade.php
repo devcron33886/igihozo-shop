@@ -1,33 +1,33 @@
-<div class="col-lg-3 col-md-6 col-12">
+<div class="col-lg-4 col-md-6 col-12">
     <div class="single-product">
         <div class="product-image">
-            <img src="{{ $product->getFirstMediaUrl('image', 'preview') }}" alt="#">
+            <img src="{{ $product->getFirstMediaUrl('image', 'preview') }}"
+                 alt="{{ $product->name }}">
             @if ($added)
-                <div class="button">
-                    <button type="button" wire:click="remove" wire:loading.attr="disabled" class="btn"
-                        style="background-color:red !important;">
-                        <i class="lni lni-close"></i>
-                        Remove
-                    </button>
-                </div>
+                <button type="button" wire:click="remove" wire:loading.attr="disabled" class="btn btn-danger">
+                    <i class="lni lni-close"></i>
+                    Remove
+                </button>
+
             @else
                 <button type="button" wire:loading.attr="disabled" wire:click="addToCart" class="btn btn-primary">
                     <i class="lni lni-cart"></i>&nbsp;
-                    Add to Cart</a>
+                    Add to Cart
                 </button>
             @endif
-
-
         </div>
-    </div>
-    <div class="product-info py-4">
-
-        <h4 class="title text-center">
-            <a href="{{ route('product-details', $product->slug) }}">{{ $product->name }}</a>
-        </h4>
-
-        <div class="price text-center mt-4">
-            <span>{{ $product->formattedPrice() }}</span>
+        <div class="product-info">
+            <span class="category">{{ $product->category->name }}</span>
+            <h4 class="title">
+                <a
+                    href="{{ route('product-details', $product->slug) }}">{{ $product->name }}</a>
+            </h4>
+            <ul class="review">
+            </ul>
+            <div class="price">
+                <span>{{ $product->formattedPrice() }}</span>
+            </div>
         </div>
     </div>
 </div>
+

@@ -13,10 +13,9 @@ class ProductController extends Controller
     public function __invoke(Product $product)
     {
         SEOTools::setTitle($product->name);
-        SEOTools::setDescription( $product->description);
+        SEOTools::setDescription($product->description);
         SEOMeta::addMeta('product:created_time', $product->created_at->toW3CString(), 'property');
         SEOMeta::addMeta('product:section', $product->category->name, 'property');
-
 
         OpenGraph::setDescription($product->description);
         OpenGraph::setTitle($product->name);
