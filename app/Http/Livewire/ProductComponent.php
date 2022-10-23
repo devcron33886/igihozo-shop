@@ -54,7 +54,7 @@ class ProductComponent extends Component
             'id' => $id,
             'name' => $product->name,
             'quantity' => $quantity,
-            'price' => $product->getRealPrice(),
+            'price' => $product->price,
         ]);
         $cartItem->associate($product);
 
