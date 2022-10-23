@@ -26,7 +26,7 @@
 
                         <div class="col-lg-4 col-md-4 col-12">
                             <div class="form-group quantity">
-                                @if ($product->status === 1)
+                                {{-- @if ($product->status === 1) --}}
                                     <form action="{{ route('cart.addToCart', ['id' => $product->id]) }}"
                                         class="form-inline">
 
@@ -54,11 +54,11 @@
 
 
                                     </form>
-                                @else
+                                {{-- @else
                                     <button class="btn btn-warning">
                                     Not available
                                     </button>
-                                @endif
+                                @endif --}}
 
                             </div>
                         </div>
