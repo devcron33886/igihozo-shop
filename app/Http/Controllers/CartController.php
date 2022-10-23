@@ -13,12 +13,9 @@ class CartController extends Controller
         return view('cart.index');
     }
 
-    public function getAddToCart(Request $request, $id)
+    public function getAddToCart(Request $request,$id)
     {
         $product = Product::find($id);
-        /* if (is_null($product) || $product->status !== 'Available') {
-            return redirect()->back();
-        } */
 
         $qty = $request->input('qty');
         if (! $qty) {

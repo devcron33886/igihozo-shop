@@ -3,13 +3,14 @@
     <!-- Start Hero Area -->
     <section class="hero-area">
         <div class="container">
-            @if(Session::has('message'))
+            @if (Session::has('message'))
                 <div class="row">
                     <div class="col-12">
                         <div class="alert alert-success">
                             <p>
                                 <i class="fa fa-check-circle"></i>
-                                {{ Session::get('message') }}</p>
+                                {{ Session::get('message') }}
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -30,13 +31,12 @@
                             </div>
                             <div id="tns1-mw" class="tns-ovh">
                                 <div class="tns-inner" id="tns1-iw">
-                                    <div
-                                        class="hero-slider  tns-slider tns-carousel tns-subpixel tns-calc tns-horizontal"
+                                    <div class="hero-slider  tns-slider tns-carousel tns-subpixel tns-calc tns-horizontal"
                                         id="tns1"
                                         style="transform: translate3d(-50%, 0px, 0px); transition-duration: 0s;">
                                         <div class="single-slider tns-item tns-slide-cloned"
-                                             style="background-image: url(assets/images/hero/slider-bg1.jpg);"
-                                             aria-hidden="true" tabindex="-1">
+                                            style="background-image: url(assets/images/hero/slider-bg1.jpg);"
+                                            aria-hidden="true" tabindex="-1">
                                             <div class="content">
                                                 <h2><span>No restocking fee ($35 savings)</span>
                                                     M75 Sport Watch
@@ -51,8 +51,8 @@
                                             </div>
                                         </div>
                                         <div class="single-slider tns-item tns-slide-cloned"
-                                             style="background-image: url(assets/images/hero/slider-bg2.jpg);"
-                                             aria-hidden="true" tabindex="-1">
+                                            style="background-image: url(assets/images/hero/slider-bg2.jpg);"
+                                            aria-hidden="true" tabindex="-1">
                                             <div class="content">
                                                 <h2><span>Big Sale Offer</span>
                                                     Get the Best Deal on CCTV Camera
@@ -68,8 +68,8 @@
                                         </div>
 
                                         <div class="single-slider tns-item"
-                                             style="background-image: url(assets/images/hero/slider-bg1.jpg);"
-                                             id="tns1-item0" aria-hidden="true" tabindex="-1">
+                                            style="background-image: url(assets/images/hero/slider-bg1.jpg);"
+                                            id="tns1-item0" aria-hidden="true" tabindex="-1">
                                             <div class="content">
                                                 <h2><span>No restocking fee ($35 savings)</span>
                                                     M75 Sport Watch
@@ -86,8 +86,8 @@
 
 
                                         <div class="single-slider tns-item tns-slide-active"
-                                             style="background-image: url(assets/images/hero/slider-bg2.jpg);"
-                                             id="tns1-item1">
+                                            style="background-image: url(assets/images/hero/slider-bg2.jpg);"
+                                            id="tns1-item1">
                                             <div class="content">
                                                 <h2><span>Big Sale Offer</span>
                                                     Get the Best Deal on CCTV Camera
@@ -103,8 +103,8 @@
                                         </div>
 
                                         <div class="single-slider tns-item tns-slide-cloned"
-                                             style="background-image: url(assets/images/hero/slider-bg1.jpg);"
-                                             aria-hidden="true" tabindex="-1">
+                                            style="background-image: url(assets/images/hero/slider-bg1.jpg);"
+                                            aria-hidden="true" tabindex="-1">
                                             <div class="content">
                                                 <h2><span>No restocking fee ($35 savings)</span>
                                                     M75 Sport Watch
@@ -119,8 +119,8 @@
                                             </div>
                                         </div>
                                         <div class="single-slider tns-item tns-slide-cloned"
-                                             style="background-image: url(assets/images/hero/slider-bg2.jpg);"
-                                             aria-hidden="true" tabindex="-1">
+                                            style="background-image: url(assets/images/hero/slider-bg2.jpg);"
+                                            aria-hidden="true" tabindex="-1">
                                             <div class="content">
                                                 <h2><span>Big Sale Offer</span>
                                                     Get the Best Deal on CCTV Camera
@@ -146,7 +146,7 @@
                         <div class="col-lg-12 col-md-6 col-12 md-custom-padding">
 
                             <div class="hero-small-banner"
-                                 style="background-image: url('assets/images/hero/slider-bnr.jpg');">
+                                style="background-image: url('assets/images/hero/slider-bnr.jpg');">
                                 <div class="content">
                                     <h2>
                                         <span>New line required</span>
@@ -192,12 +192,15 @@
                     <div class="col-lg-4 col-md-6 col-12">
 
                         <div class="single-category">
-                            <h3 class="heading text-center">{{ $category->name }}</h3>
-
+                            <h3 class="heading">{{ $category->name }}</h3>
+                            <div class="py-3">
+                            <a href="{{ route('category-details',$category->slug) }}" class="btn btn-warning">Shop Now</a>
+                            </div>
                             <div class="images">
-                                <img src="{{ $category->getFirstMediaUrl('image','preview') }}" alt="#">
+                                 <img src="{{ $category->getFirstMediaUrl('image', 'preview') }}" alt="#">
                             </div>
                         </div>
+
                     </div>
                 @endforeach
             </div>
@@ -216,7 +219,7 @@
             </div>
             <div class="row">
                 @foreach (\App\Models\Product::limit(9)->get() as $product)
-                    <livewire:trending-product-component :product="$product"/>
+                    <livewire:trending-product-component :product="$product" />
                 @endforeach
             </div>
         </div>
@@ -237,7 +240,7 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-12">
                     <div class="single-banner custom-responsive-margin"
-                         style="background-image:url('assets/images/banner/banner-2-bg.jpg')">
+                        style="background-image:url('assets/images/banner/banner-2-bg.jpg')">
                         <div class="content">
                             <h2>Smart Headphone</h2>
                             <p>Lorem ipsum dolor sit amet, <br>eiusmod tempor
@@ -303,6 +306,6 @@
     <!-- End Shipping Info -->
 
     <!-- Start Footer Area -->
-    <x-footer-component/>
+    <x-footer-component />
     <!--/ End Footer Area -->
 @endsection

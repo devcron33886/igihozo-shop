@@ -14,6 +14,8 @@
 
     Route::get('/shopping/basket', [App\Http\Controllers\CartController::class, 'index'])->name('cart.index');
 
+    Route::get('/addToCart/{id}', [App\Http\Controllers\CartController::class, 'getAddToCart'])->name('cart.addToCart');
+
     Route::get('/remove/cart/item/{id}', [App\Http\Controllers\CartController::class, 'getRemoveItem'])->name('cart.removeItem');
 
     Route::get('/remove/cart', [App\Http\Controllers\CartController::class, 'getRemoveAll'])->name('cart.removeAll');

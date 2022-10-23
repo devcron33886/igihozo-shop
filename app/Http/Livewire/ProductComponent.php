@@ -4,6 +4,9 @@ namespace App\Http\Livewire;
 
 use App\Models\Product;
 use Cart;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Livewire\Component;
 
@@ -38,7 +41,7 @@ class ProductComponent extends Component
         $product = $this->product;
         $quantity = $this->quantity;
 
-        if ($product->status !== 'Available' || $quantity <= 0) {
+        if ($product->status !== '1') {
             session()->flash('error', 'Product not available');
 
             return back();
