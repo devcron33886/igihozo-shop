@@ -27,33 +27,27 @@
                         <div class="col-lg-4 col-md-4 col-12">
                             <div class="form-group quantity">
                                 {{-- @if ($product->status === 1) --}}
-                                    <form action="{{ route('cart.addToCart', ['id' => $product->id]) }}"
-                                        class="form-inline">
+                                <form action="{{ route('cart.addToCart', ['id' => $product->id]) }}"
+                                    class="form-inline">
 
-                                        @if ($added)
-                                            <button wire:loading.attr="disabled" type="button" wire:click="remove"
-                                                class="btn  btn-danger">
-                                                <i class="fa fa-times"></i>
-                                                Remove
-                                            </button>
-                                        @else
-                                            <div class="input-group">
-                                                <input min="1"  value="1" type="text"
-                                                    wire:model="quantity" max="{{ $product->qty }}" name="qty"
-                                                    class="form-control" placeholder="Quantity"
-                                                    id="qty{{ $product->id }}">
-                                                <span class="input-group-btn">
-                                                    <button wire:loading.attr="disabled" type="button" wire:click="add"
-                                                        class="btn  btn-success">
-                                                        <i class="fa fa-plus"></i>
-                                                        Add
-                                                    </button>
-                                                </span>
-                                            </div><!-- /input-group -->
-                                        @endif
+                                    @if ($added)
+                                        <button wire:loading.attr="disabled" type="button" wire:click="remove"
+                                            class="btn  btn-danger">
+                                            <i class="fa fa-times"></i>
+                                            Remove
+                                        </button>
+                                    @else
+                                        <div class="input-group mb-3">
+                                            <input min="1" value="1" type="text" wire:model="quantity"
+                                                max="10" name="qty" class="form-control"
+                                                placeholder="Quantity" id="qty{{ $product->id }}">
+                                            <button wire:loading.attr="disabled" type="button" wire:click="add" class="btn  btn-success"><i class="fa fa-shopping-cart"></i>
+                                                    Add to cart</button>
+                                        </div>
+                                    @endif
 
 
-                                    </form>
+                                </form>
                                 {{-- @else
                                     <button class="btn btn-warning">
                                     Not available

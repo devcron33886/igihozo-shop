@@ -41,7 +41,7 @@ class ProductComponent extends Component
         $product = $this->product;
         $quantity = $this->quantity;
 
-        if ($product->status !== '1') {
+        if ($product->status !== 1) {
             session()->flash('error', 'Product not available');
 
             return back();
@@ -49,6 +49,7 @@ class ProductComponent extends Component
 
         $id = $product->id;
         Cart::remove($id);
+        $this->emit('productRemoved');
 
         $cartItem = Cart::add([
             'id' => $id,

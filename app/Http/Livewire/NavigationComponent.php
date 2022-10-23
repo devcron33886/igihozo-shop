@@ -15,6 +15,7 @@ class NavigationComponent extends Component
     protected $listeners = [
         'cart.updated' => '$refresh',
         'productRemoved' => '$refresh',
+        'productAdded' => '$refresh',
     ];
 
     public function render(): Factory|View|Application
