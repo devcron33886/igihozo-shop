@@ -38,9 +38,9 @@
                                             </button>
                                         @else
                                             <div class="input-group">
-                                                <input min="0.5" size="10" value="1" type="text"
+                                                <input min="1"  value="1" type="text"
                                                     wire:model="quantity" max="{{ $product->qty }}" name="qty"
-                                                    class="form-control" placeholder="Qty"
+                                                    class="form-control" placeholder="Quantity"
                                                     id="qty{{ $product->id }}">
                                                 <span class="input-group-btn">
                                                     <button wire:loading.attr="disabled" type="button" wire:click="add"
