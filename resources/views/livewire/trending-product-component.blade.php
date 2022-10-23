@@ -2,7 +2,7 @@
     <div class="single-product">
         <div class="product-image">
             <img src="{{ $product->getFirstMediaUrl('image', 'preview') }}" alt="{{ $product->name }}" style="height:400px !important;">
-            <div class="py-4">
+            <div class="py-4 align-center">
                 @if ($added)
                     <button type="button" wire:click="remove" wire:loading.attr="disabled" class="btn btn-danger">
                         <i class="lni lni-close"></i>
