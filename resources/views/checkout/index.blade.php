@@ -37,8 +37,8 @@
                             Delivery information
                         </div>
                         <div class="card-body">
-                            <form action="" id="checkoutForm"
-                                  class="" method="post">
+                            <form action="{{ route('order.store') }}" id="checkoutForm"
+                                   method="POST">
                                 @csrf
                                 <div class="row py-2">
                                     <div class="col-md-6">
@@ -138,7 +138,7 @@
                                         <select
                                             class="form-control select2 {{ $errors->has('shipping') ? 'is-invalid' : '' }}"
                                             name="shipping_id" id="shipping_id">
-                                            @foreach($shippings as $id => $entry)
+                                            @foreach($shipping as $id => $entry)
                                                 <option
                                                     value="{{ $id }}" {{ old('shipping_id') == $id ? 'selected' : '' }}>{{ $entry }}</option>
                                             @endforeach

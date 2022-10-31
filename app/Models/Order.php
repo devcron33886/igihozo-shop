@@ -72,4 +72,11 @@ class Order extends Model
     {
         return $this->belongsToMany(OrderItem::class);
     }
+
+    public function setOrderNo(string $prefix = 'ORD-', $pad_string = '0', int $len = 9)
+    {
+        $orderNumber = $prefix.str_pad($this->id, $len, $pad_string, STR_PAD_LEFT);
+        $this->order_no = $orderNumber;
+        $this->update();
+    }
 }

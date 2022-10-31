@@ -14,6 +14,11 @@ class ShippingType extends Model
 
     public $table = 'shipping_types';
 
+    public const STATUS_SELECT = [
+        '1' => 'Available',
+        '0' => 'Not available',
+    ];
+
     protected $dates = [
         'created_at',
         'updated_at',
@@ -23,12 +28,13 @@ class ShippingType extends Model
     protected $fillable = [
         'title',
         'price',
+        'status',
         'created_at',
         'updated_at',
         'deleted_at',
     ];
 
-    protected function serializeDate(DateTimeInterface $date)
+    protected function serializeDate(DateTimeInterface $date): string
     {
         return $date->format('Y-m-d H:i:s');
     }

@@ -227,7 +227,7 @@
     <section class="banner section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-12">
+                <div class="col-lg-4 col-md-6 col-12">
                     <div class="single-banner" style="background-image:url('assets/images/banner/banner-1-bg.jpg')">
                         <div class="content">
                             <h2>Smart Watch 2.0</h2>
