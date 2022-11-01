@@ -16,7 +16,7 @@ class OrderController extends Controller
     {
         abort_if(Gate::denies('order_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $orders = Order::with(['payment', 'shipping', 'updatedby'])->get();
+        $orders = Order::with(['payment', 'shipping'])->get();
 
         return view('admin.orders.index', compact('orders'));
     }
@@ -27,11 +27,11 @@ class OrderController extends Controller
 
         $payments = PaymentMethod::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $shippings = ShippingType::pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $shipping = ShippingType::pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $order->load('payment', 'shipping', 'updatedby');
+        $order->load('payment', 'shipping');
 
-        return view('admin.orders.edit', compact('order', 'payments', 'shippings'));
+        return view('admin.orders.edit', compact('order', 'payments', 'shipping'));
     }
 
     public function update(UpdateOrderRequest $request, Order $order)

@@ -7,7 +7,7 @@ use DateTimeInterface;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Order extends Model
@@ -39,8 +39,8 @@ class Order extends Model
         'email',
         'shipping_address',
         'notes',
-        'payment_id',
-        'shipping_id',
+        'payment_method_id',
+        'shipping_type_id',
         'total',
         'status',
         'created_at',
@@ -50,12 +50,12 @@ class Order extends Model
 
     public function payment(): BelongsTo
     {
-        return $this->belongsTo(PaymentMethod::class, 'payment_id');
+        return $this->belongsTo(PaymentMethod::class, 'payment_method_id');
     }
 
     public function shipping(): BelongsTo
     {
-        return $this->belongsTo(ShippingType::class, 'shipping_id');
+        return $this->belongsTo(ShippingType::class, 'shipping_type_id');
     }
 
     public function formattedPrice(): Money
@@ -68,12 +68,12 @@ class Order extends Model
         return $date->format('Y-m-d H:i:s');
     }
 
-    public function items(): BelongsToMany
+    public function items(): HasMany
     {
-        return $this->belongsToMany(OrderItem::class);
+        return $this->hasMany(OrderItem::class);
     }
 
-    public function setOrderNo(string $prefix = 'ORD-', $pad_string = '0', int $len = 9)
+    public function setOrderNo(string $prefix = 'ORD'.'-', $pad_string = '0', int $len = 9)
     {
         $orderNumber = $prefix.str_pad($this->id, $len, $pad_string, STR_PAD_LEFT);
         $this->order_no = $orderNumber;

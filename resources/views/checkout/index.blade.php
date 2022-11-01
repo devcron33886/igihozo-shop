@@ -119,16 +119,16 @@
                                     <div class="form-group col-6">
                                         <label for="payment_id">{{ trans('cruds.order.fields.payment') }}</label>
                                         <select
-                                            class="form-control select2 {{ $errors->has('payment') ? 'is-invalid' : '' }}"
-                                            name="payment_id" id="payment_id">
+                                            class="form-control select2 {{ $errors->has('payment_method_id') ? 'is-invalid' : '' }}"
+                                            name="payment_method_id" id="payment_method_id">
                                             @foreach($payments as $id => $entry)
                                                 <option
-                                                    value="{{ $id }}" {{ old('payment_id') == $id ? 'selected' : '' }}>{{ $entry }}</option>
+                                                    value="{{ $id }}" {{ old('payment_method_id') == $id ? 'selected' : '' }}>{{ $entry }}</option>
                                             @endforeach
                                         </select>
                                         @if($errors->has('payment'))
                                             <div class="invalid-feedback">
-                                                {{ $errors->first('payment') }}
+                                                {{ $errors->first('payment_method_id') }}
                                             </div>
                                         @endif
                                         <span class="help-block">{{ trans('cruds.order.fields.payment_helper') }}</span>
@@ -136,16 +136,16 @@
                                     <div class="form-group col-6">
                                         <label for="shipping_id">{{ trans('cruds.order.fields.shipping') }}</label>
                                         <select
-                                            class="form-control select2 {{ $errors->has('shipping') ? 'is-invalid' : '' }}"
-                                            name="shipping_id" id="shipping_id">
+                                            class="form-control select2 {{ $errors->has('shipping_type_id') ? 'is-invalid' : '' }}"
+                                            name="shipping_type_id" id="shipping_type_id">
                                             @foreach($shipping as $id => $entry)
                                                 <option
-                                                    value="{{ $id }}" {{ old('shipping_id') == $id ? 'selected' : '' }}>{{ $entry }}</option>
+                                                    value="{{ $id }}" {{ old('shipping_type_id') == $id ? 'selected' : '' }}>{{ $entry }}</option>
                                             @endforeach
                                         </select>
-                                        @if($errors->has('shipping'))
+                                        @if($errors->has('shipping_type_id'))
                                             <div class="invalid-feedback">
-                                                {{ $errors->first('shipping') }}
+                                                {{ $errors->first('shipping_type_id') }}
                                             </div>
                                         @endif
                                         <span
@@ -272,10 +272,10 @@
             var $checkoutForm = $('#checkoutForm');
             $checkoutForm.validate({
                 rules: {
-                    payment_type: "required",
+                    payment_method: "required",
                 },
                 messages: {
-                    payment_type: {
+                    payment_method_id: {
                         required: "Please choose payment method",
                         // minlength: jQuery.format("Enter at least {0} characters"),
                         // remote: jQuery.format("{0} is already in use")

@@ -26,7 +26,7 @@
 
     Route::get('/shop/checkout', [App\Http\Controllers\CheckoutController::class, 'index'])->name('checkout.index');
 
-    Route::post('order/store', [\App\Http\Controllers\CheckoutController::class, 'checkout'])->name('order.store');
+    Route::post('/checkout', [\App\Http\Controllers\CheckoutController::class, 'checkout'])->name('order.store');
 
     Route::get('/home', function () {
         if (session('status')) {

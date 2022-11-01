@@ -59,10 +59,10 @@
                                 {{ $order->order_no ?? '' }}
                             </td>
                             <td>
-                                {{ $order->client_name ?? '' }}
+                                {{ $order->name ?? '' }}
                             </td>
                             <td>
-                                {{ $order->client_phone ?? '' }}
+                                {{ $order->mobile ?? '' }}
                             </td>
                             <td>
                                 {{ $order->shipping_address ?? '' }}
@@ -74,7 +74,7 @@
                                 {{ $order->shipping->title ?? '' }}
                             </td>
                             <td>
-                                {{ $order->total ?? '' }}
+                                {{ $order->formattedPrice() ?? '' }}
                             </td>
                             <td>
                                 {{ App\Models\Order::STATUS_SELECT[$order->status] ?? '' }}
@@ -106,7 +106,7 @@
 <script>
     $(function () {
   let dtButtons = $.extend(true, [], $.fn.dataTable.defaults.buttons)
-  
+
   $.extend(true, $.fn.dataTable.defaults, {
     orderCellsTop: true,
     order: [[ 1, 'desc' ]],
@@ -117,7 +117,7 @@
       $($.fn.dataTable.tables(true)).DataTable()
           .columns.adjust();
   });
-  
+
 })
 
 </script>
