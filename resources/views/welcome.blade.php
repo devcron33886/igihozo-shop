@@ -31,36 +31,25 @@
                             </div>
                             <div id="tns1-mw" class="tns-ovh">
                                 <div class="tns-inner" id="tns1-iw">
-                                    <div class="hero-slider  tns-slider tns-carousel tns-subpixel tns-calc tns-horizontal"
+                                    <div
+                                        class="hero-slider  tns-slider tns-carousel tns-subpixel tns-calc tns-horizontal"
                                         id="tns1"
                                         style="transform: translate3d(-50%, 0px, 0px); transition-duration: 0s;">
                                         <div class="single-slider tns-item tns-slide-cloned"
-                                            style="background-image: url(assets/images/hero/slider-bg1.jpg);"
-                                            aria-hidden="true" tabindex="-1">
+                                             style="background-image: url(images/hero/1.png);"
+                                             aria-hidden="true" tabindex="-1">
                                             <div class="content">
-                                                <h2><span>No restocking fee ($35 savings)</span>
-                                                    M75 Sport Watch
-                                                </h2>
-                                                <p>Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor
-                                                    incididunt ut
-                                                    labore dolore magna aliqua.</p>
-                                                <h3><span>Now Only</span> $320.99</h3>
+
                                                 <div class="button">
                                                     <a href="{{ route('shop') }}" class="btn">Shop Now</a>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="single-slider tns-item tns-slide-cloned"
-                                            style="background-image: url(assets/images/hero/slider-bg2.jpg);"
-                                            aria-hidden="true" tabindex="-1">
+                                             style="background-image: url(images/hero/2.png);"
+                                             aria-hidden="true" tabindex="-1">
                                             <div class="content">
-                                                <h2><span>Big Sale Offer</span>
-                                                    Get the Best Deal on CCTV Camera
-                                                </h2>
-                                                <p>Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor
-                                                    incididunt ut
-                                                    labore dolore magna aliqua.</p>
-                                                <h3><span>Combo Only:</span> $590.00</h3>
+
                                                 <div class="button">
                                                     <a href="{{ route('shop') }}" class="btn">Shop Now</a>
                                                 </div>
@@ -68,34 +57,10 @@
                                         </div>
 
                                         <div class="single-slider tns-item"
-                                            style="background-image: url(assets/images/hero/slider-bg1.jpg);"
-                                            id="tns1-item0" aria-hidden="true" tabindex="-1">
+                                             style="background-image: url(images/hero/3.png);"
+                                             id="tns1-item0" aria-hidden="true" tabindex="-1">
                                             <div class="content">
-                                                <h2><span>No restocking fee ($35 savings)</span>
-                                                    M75 Sport Watch
-                                                </h2>
-                                                <p>Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor
-                                                    incididunt ut
-                                                    labore dolore magna aliqua.</p>
-                                                <h3><span>Now Only</span> $320.99</h3>
-                                                <div class="button">
-                                                    <a href="{{ route('shop') }}" class="btn">Shop Now</a>
-                                                </div>
-                                            </div>
-                                        </div>
 
-
-                                        <div class="single-slider tns-item tns-slide-active"
-                                            style="background-image: url(assets/images/hero/slider-bg2.jpg);"
-                                            id="tns1-item1">
-                                            <div class="content">
-                                                <h2><span>Big Sale Offer</span>
-                                                    Get the Best Deal on CCTV Camera
-                                                </h2>
-                                                <p>Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor
-                                                    incididunt ut
-                                                    labore dolore magna aliqua.</p>
-                                                <h3><span>Combo Only:</span> $590.00</h3>
                                                 <div class="button">
                                                     <a href="{{ route('shop') }}" class="btn">Shop Now</a>
                                                 </div>
@@ -103,35 +68,23 @@
                                         </div>
 
                                         <div class="single-slider tns-item tns-slide-cloned"
-                                            style="background-image: url(assets/images/hero/slider-bg1.jpg);"
-                                            aria-hidden="true" tabindex="-1">
+                                             style="background-image: url(assets/images/hero/slider-bg1.jpg);"
+                                             aria-hidden="true" tabindex="-1">
                                             <div class="content">
-                                                <h2><span>No restocking fee ($35 savings)</span>
-                                                    M75 Sport Watch
-                                                </h2>
-                                                <p>Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor
-                                                    incididunt ut
-                                                    labore dolore magna aliqua.</p>
-                                                <h3><span>Now Only</span> $320.99</h3>
+
                                                 <div class="button">
                                                     <a href="{{ route('shop') }}" class="btn">Shop Now</a>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="single-slider tns-item tns-slide-cloned"
-                                            style="background-image: url(assets/images/hero/slider-bg2.jpg);"
-                                            aria-hidden="true" tabindex="-1">
+                                             style="background-image: url(images/hero/3.png);"
+                                             aria-hidden="true" tabindex="-1">
                                             <div class="content">
-                                                <h2><span>Big Sale Offer</span>
-                                                    Get the Best Deal on CCTV Camera
-                                                </h2>
-                                                <p>Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor
-                                                    incididunt ut
-                                                    labore dolore magna aliqua.</p>
-                                                <h3><span>Combo Only:</span> $590.00</h3>
-                                                <div class="button">
-                                                    <a href="{{ route('shop') }}" class="btn">Shop Now</a>
-                                                </div>
+
+
+                                                    <a href="{{ route('shop') }}" class="btn btn-outline-primary">Shop Now</a>
+
                                             </div>
                                         </div>
                                     </div>
@@ -146,13 +99,9 @@
                         <div class="col-lg-12 col-md-6 col-12 md-custom-padding">
 
                             <div class="hero-small-banner"
-                                style="background-image: url('assets/images/hero/slider-bnr.jpg');">
+                                 style="background-image: url('images/hero/dress.png');">
                                 <div class="content">
-                                    <h2>
-                                        <span>New line required</span>
-                                        iPhone 12 Pro Max
-                                    </h2>
-                                    <h3>$259.99</h3>
+
                                 </div>
                             </div>
 
@@ -163,9 +112,7 @@
                                 <div class="content">
                                     <h2>Weekly Sale!</h2>
                                     <p>Saving up to 50% off all online store items this week.</p>
-                                    <div class="button">
-                                        <a class="btn" href="{{ route('shop') }}">Shop Now</a>
-                                    </div>
+                                    <a class="btn btn-outline-primary" href="{{ route('shop') }}">Shop Now</a>
                                 </div>
                             </div>
 
@@ -194,10 +141,11 @@
                         <div class="single-category">
                             <h3 class="heading">{{ $category->name }}</h3>
                             <div class="py-3">
-                            <a href="{{ route('category-details',$category->slug) }}" class="btn btn-warning">Shop Now</a>
+                                <a href="{{ route('category-details',$category->slug) }}" class="btn btn-warning">Shop
+                                    Now</a>
                             </div>
                             <div class="images">
-                                 <img src="{{ $category->getFirstMediaUrl('image', 'preview') }}" alt="#">
+                                <img src="{{ $category->getFirstMediaUrl('image', 'preview') }}" alt="#">
                             </div>
                         </div>
 
@@ -219,7 +167,7 @@
             </div>
             <div class="row">
                 @foreach (\App\Models\Product::limit(9)->get() as $product)
-                    <livewire:trending-product-component :product="$product" />
+                    <livewire:trending-product-component :product="$product"/>
                 @endforeach
             </div>
         </div>
@@ -240,7 +188,7 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-12">
                     <div class="single-banner custom-responsive-margin"
-                        style="background-image:url('assets/images/banner/banner-2-bg.jpg')">
+                         style="background-image:url('assets/images/banner/banner-2-bg.jpg')">
                         <div class="content">
                             <h2>Smart Headphone</h2>
                             <p>Lorem ipsum dolor sit amet, <br>eiusmod tempor
@@ -306,6 +254,6 @@
     <!-- End Shipping Info -->
 
     <!-- Start Footer Area -->
-    <x-footer-component />
+    <x-footer-component/>
     <!--/ End Footer Area -->
 @endsection
