@@ -7,7 +7,7 @@
                     <div class="product-image">
                         @if($product->image)
                             <img src="{{ $product->getFirstMediaUrl('image','image') }}"
-                                 alt="{{ $product->name }}" style="max-height: 400px !important; max-width: 400px !important;">
+                                 alt="{{ $product->name }}" style="max-height: 600px !important; max-width: 400px !important;">
                         @endif
                         <div class="py-5 align-center">
                             <a href="{{ route('product-details',$product->slug) }}"
