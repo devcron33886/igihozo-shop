@@ -73,7 +73,7 @@
                                                     <div class="py-1 align-center">
                                                         <a href="{{ route('product-details',$product->slug) }}"
                                                            class="btn btn-primary pt-2"><i
-                                                                class="lni lni-cart"></i> Add to Cart</a>
+                                                                class="lni lni-eye"></i> View Details</a>
                                                     </div>
                                                 </div>
                                                 <div class="product-info">

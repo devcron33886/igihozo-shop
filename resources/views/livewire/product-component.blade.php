@@ -62,18 +62,5 @@
             </div>
         </div>
     </div>
-    <div class="product-details-info">
-        <div class="single-block">
-            <div class="row">
-                <div class="col-lg-12 col-12">
-                    <div class="info-body custom-responsive-margin">
-                        <h4>Details</h4>
-                        <p>{{ $product->description }}</p>
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
+    <x-related-product-component></x-related-product-component>
 </div>

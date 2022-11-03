@@ -4,6 +4,9 @@ namespace App\Http\Livewire;
 
 use App\Models\Product;
 use Cart;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Livewire\Component;
 
@@ -18,7 +21,7 @@ class ProductComponent extends Component
         $this->quantity = 1;
     }
 
-    public function render()
+    public function render(): Factory|View|Application
     {
         return view('livewire.product-component', [
             'added' => Cart::get($this->product->id),
