@@ -9,7 +9,7 @@
                             <img src="{{ $product->getFirstMediaUrl('image','image') }}"
                                  alt="{{ $product->name }}">
                         @endif
-                        <div class="py-1 align-center">
+                        <div class="py-5 align-center">
                             <a href="{{ route('product-details',$product->slug) }}"
                                class="btn btn-primary pt-2"><i
                                     class="lni lni-eye"></i> View Details</a>
