@@ -9,12 +9,12 @@
                             <ul class="menu-top-link">
                                 @foreach ($settings as $setting)
                                     <li>
-                                       <p class="text-white"><i class="lni lni-envelope"></i> {{ $setting->email }}</p>
+                                        <p class="text-white"><i class="lni lni-envelope"></i> {{ $setting->email }}</p>
                                     </li>
                                     <li>
-                                       <p class="text-white"><i class="lni lni-phone"></i> {{ $setting->mobile }}</p>
+                                        <p class="text-white"><i class="lni lni-phone"></i> {{ $setting->mobile }}</p>
                                     </li>
-                                    
+
                                 @endforeach
 
                             </ul>
@@ -67,10 +67,8 @@
                             <div class="navbar-search search-style-5">
 
                                 <div class="search-input">
-                                    <input type="text" placeholder="Search">
-                                </div>
-                                <div class="search-btn">
-                                    <button><i class="lni lni-search-alt"></i></button>
+                                    <input type="text" wire:model.debounce.500ms="searchQuery"
+                                           wire:click.prevent="render" placeholder="Search">
                                 </div>
                             </div>
                             <!-- navbar search Ends -->
@@ -124,8 +122,8 @@
                         <!-- Start Navbar -->
                         <nav class="navbar navbar-expand-lg">
                             <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                aria-expanded="false" aria-label="Toggle navigation">
+                                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                    aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="toggler-icon"></span>
                                 <span class="toggler-icon"></span>
                                 <span class="toggler-icon"></span>
@@ -134,7 +132,7 @@
                                 <ul id="nav" class="navbar-nav ms-auto">
                                     <li class="nav-item">
                                         <a href="{{ route('welcome') }}" class="active"
-                                            aria-label="Toggle navigation">Home</a>
+                                           aria-label="Toggle navigation">Home</a>
                                     </li>
 
                                     <li class="nav-item">
@@ -175,6 +173,41 @@
                 </div>
             </div>
         </div>
-        <!-- End Header Bottom -->
     </header>
-</div>
+    @if($searchQuery)
+        <div class="container col-md-12">
+            <div class="card">
+                <div class="card-body">
+
+                    <div class="row">
+
+                        @forelse ($products as $product)
+
+                            <div class="col-lg-4 col-md-6 col-12">
+                                <div class="single-product">
+                                    <div class="product-image">
+                                        <img src="{{ $product->getFirstMediaUrl('image', 'preview') }}"
+                                             alt="{{ $product->name }}"
+                                             style="height:400px !important;">
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <span class="category">{{ $product->category->name }}</span>
+                                    <h4 class="title">
+                                        <a href="{{ route('product-details', $product->slug) }}">{{ $product->name }}</a>
+                                    </h4>
+                                    <ul class="review">
+                                    </ul>
+                                    <div class="price">
+                                        <span>{{ $product->formattedPrice() }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        @empty
+                            <div class="alert alert-warning"> There is no product available</div>
+                        @endforelse
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
